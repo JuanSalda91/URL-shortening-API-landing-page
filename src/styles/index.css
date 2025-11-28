@@ -6,6 +6,16 @@
     box-sizing: border-box;
 }
 
+:root {
+    --Blue400: hsl(180, 66%, 49%);
+    --Purple950: hsl(257, 27%, 26%);
+    --Gray400: hsl(0, 0%, 75%);
+    --Gray500: hsl(257, 7%, 63%);
+    --Gray900: hsl(255, 11%, 22%);
+    --Gray950: hsl(260, 8%, 14%);
+    --Red400: hsl(0, 87%, 67%);
+}
+
 body {
     margin: 0;
     font-family: "Poppins", "san-serif";
@@ -56,7 +66,7 @@ header {
 }
 
 .right ul .active {
-    background-color: cyan;
+    background-color: var(--Blue400);
     color: white;
     padding: 0.4rem 1.2rem;
     border-radius: 1rem;
@@ -97,7 +107,7 @@ section {
 }
 
 .content .btn {
-    background: cyan;
+    background: var(--Blue400);
     padding: 0.5rem 1.7rem;
     margin: 0.5rem;
     outline: none;
@@ -127,7 +137,7 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: darkviolet;
+    background: var(--Purple950);
     padding: 1rem 1.5rem;
     position: relative;
     width: min(100%, 40rem);
@@ -139,10 +149,79 @@ input {
     padding: 0.5rem;
     border-radius: 0.2rem;
     color: white;
-    background: cyan;
+    background: var(--Blue400);
     font-size: 1rem;
     text-align: center;
     cursor: pointer;
     outline: none;
     border: none;
+}
+
+.services {
+    margin-top: 5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-content {
+    max-width: 30rem;
+}
+
+.service-content p{
+    color: gray;
+}
+
+.cards {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.card {
+    margin: 2rem;
+    max-width: 20rem;
+}
+
+.card1 {
+    background: #eff1f7;
+    padding: 1rem 0.2rem;
+    border-radius: 0.3rem;
+}
+
+.card2 {
+    background: #eff1f7;
+    padding: 1rem 0.2rem;
+    border-radius: 0.3rem;
+}
+
+.card3 {
+    background: #eff1f7;
+    padding: 1rem 0.2rem;
+    border-radius: 0.3rem;
+}
+
+.boost {
+    margin-top: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    background: var(--Purple950);
+    padding: 1.8rem;
+    position: relative;
+    gap: 2rem;
+    color: white;
+}
+
+.boost .btn {
+    background: var(--Blue400);
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 1.5rem;
 }
