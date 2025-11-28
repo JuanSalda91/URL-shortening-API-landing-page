@@ -74,3 +74,75 @@ header {
     transition: all 0.3s ease-in-out;
     background: #000;
 }
+
+section {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content {
+    max-width: 30rem;
+}
+
+.content h1 {
+    font-size: 3rem;
+    margin: 0.5rem;
+}
+
+.content p {
+    color: gray;
+    margin: 0.5rem;
+}
+
+.content .btn {
+    background: cyan;
+    padding: 0.5rem 1.7rem;
+    margin: 0.5rem;
+    outline: none;
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    border-radius: 1.2rem;
+    cursor: pointer;
+}
+
+.image img {
+    width: 85%;
+}
+
+input {
+    padding: 0.6rem 0.3rem;
+    border-radius: 0.2rem;
+    font-size: 1.2rem;
+    outline: none;
+    border: none;
+    margin: 0.5rem;
+    flex: 1;
+}
+
+.input-container {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: darkviolet;
+    padding: 1rem 1.5rem;
+    position: relative;
+    width: min(100%, 40rem);
+    border-radius: 0.3rem;
+    overflow:hidden;
+}
+
+.input-btn {
+    padding: 0.5rem;
+    border-radius: 0.2rem;
+    color: white;
+    background: cyan;
+    font-size: 1rem;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
