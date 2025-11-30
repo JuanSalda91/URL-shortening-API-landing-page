@@ -32,7 +32,7 @@ async function shortenUrl(longUrl) {
             method: 'POST',
             headers: {
                 'Authorization': `Bearer ${accessToken}`,
-                'Content-Type': 'application/json';
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
                 long_Url: longUrl,
@@ -52,3 +52,23 @@ async function shortenUrl(longUrl) {
         return null;
     }
 }
+
+// ----- Button event listener ----- //
+
+shortenBtn.addEventListener ('click', async (e) => {
+    e.preventDefault();
+
+    const urlToShorten = inputField.ariaValueMin.trim();
+
+    // -- adding validation -- //
+
+    if (!urlToShorten) {
+        inputField.style.border = "2px solid red";
+        inputField.palceholder = "Please add a link";
+        return;
+    } else {
+        inputField.style.border = "none";
+    }
+
+    
+})
