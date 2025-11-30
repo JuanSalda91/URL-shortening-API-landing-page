@@ -18,7 +18,7 @@
 
 body {
     margin: 0;
-    font-family: "Poppins", "san-serif";
+    font-family: "Poppins", sans-serif;
     margin-inline: auto;
 }
 
@@ -44,7 +44,7 @@ header {
 .left ul a {
     text-decoration: none;
     padding: 0.2rem 1rem;
-    color: rgb(136, 136, 136);
+    color: var(--Gray500);
     cursor: pointer;
 }
 
@@ -61,7 +61,7 @@ header {
 .right ul a {
     text-decoration: none;
     padding: 0.2rem 1rem;
-    color: gray;
+    color: var(--Gray500);
     cursor: pointer;
 }
 
@@ -102,7 +102,7 @@ section {
 }
 
 .content p {
-    color: gray;
+    color: var(--Gray500);
     margin: 0.5rem;
 }
 
@@ -124,7 +124,7 @@ section {
 
 .link-input {
     height: auto;
-    background: linear-gradient(to bottom, white 50%, rgb(231, 229, 234) 50%);
+    background: linear-gradient(to bottom, white 50%, #eff1f7 50%);
 }
 
 input {
@@ -163,50 +163,94 @@ input {
 }
 
 .services {
-    padding-top: 100px;
-    text-align: center;
     display: flex;
     flex-direction: column;
-    background: rgb(231, 229, 234);
+    align-items: center;
+    background-color: #eff1f7;
+    padding: 10rem 2rem;
+    text-align: center;
 }
 
 .service-content {
-    max-width: 30rem;
+    max-width: 500px;
+    margin: 0 auto 6rem auto;
 }
 
 .service-content p{
-    color: gray;
+    color: var(--Gray500);
 }
 
-.cards {
-    margin-top: 2.5rem;
+.cards-container{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2rem;
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.cards-container::before{
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 8px;
+    background-color: var(--Blue400);
+    top: 50%;
+    left: 10%;
+    z-index: 0;
 }
 
 .card {
-    margin: 2rem;
-    max-width: 20rem;
+    background: white;
+    padding: 0 2rem 2.5rem 2rem;
+    border-radius: 0.5rem;
+    position: relative;
+    z-index: 1;
+    text-align: left;
+    max-width: 350px;
 }
 
 .card1 {
-    background: #eff1f7;
-    padding: 1rem 0.2rem;
-    border-radius: 0.3rem;
+    margin-top: 0;
 }
 
 .card2 {
-    background: #eff1f7;
-    padding: 1rem 0.2rem;
-    border-radius: 0.3rem;
+    margin-top: 3rem;
 }
 
 .card3 {
-    background: #eff1f7;
-    padding: 1rem 0.2rem;
-    border-radius: 0.3rem;
+    margin-top: 6rem;
+}
+
+.icon-container{
+    background-color: var(--Purple950);
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -2.75rem;
+    margin-bottom: -1rem;
+}
+
+.icon-container img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+.card h3 {
+    margin-bottom: 0.95rem;
+    font-size: 1.4rem;
+    color: var(--Gray950);
+}
+
+.card p{
+    font-size: 0.95rem;
+    color: var(--Gray500);
+    line-height: 1.6;
 }
 
 .boost {
@@ -215,7 +259,7 @@ input {
     display: flex;
     flex-direction: column;
     background: var(--Purple950);
-    padding: 1.8rem;
+    padding: 5rem;
     position: relative;
     gap: 2rem;
     color: white;
@@ -235,7 +279,9 @@ input {
 footer {
     display: flex;
     justify-content: space-around;
-    background: var(--Gray950)
+    align-items: flex-start;
+    background: var(--Gray950);
+    padding: 5rem;
 }
 
 .footer-left {
@@ -244,24 +290,157 @@ footer {
 }
 
 .footer-left img {
-    color: white;
+    filter: brightness(0) invert(1);
 }
 
 .footer-mid {
     display:flex;
-    justify-content:space-around;
-    align-items: center;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.footer-col h4 {
+    color: white;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
 }
 
 .footer-links {
-    display: flex;
-    flex-direction: column;
-    color: white;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li {
+    color: var(--Gray400);
+    margin-bottom: 0.8rem;
+    cursor: pointer;
 }
 
 .footer-social {
     display: flex;
     align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
+}
+
+/* ----- Media Queries ----- */
+
+/* --- Tablet & Small Laptop (1024px and below) --- */
+@media screen and (max-width: 1024px) {
+    
+    /* Allow content to shrink but stay centered */
+    .cards-container {
+        flex-wrap: wrap; /* Allow cards to wrap if they get too squished */
+        gap: 4rem;
+        max-width: 90%; /* Prevent overflow */
+    }
+    
+    /* Reset the specific margins for the cascading cards on smaller screens */
+    /* because there might not be enough height/space */
+    .card1, .card2, .card3 {
+        margin-top: 0; 
+    }
+    
+    /* Hide the connecting line on tablets if wrapping breaks the visual flow */
+    .cards-container::before {
+        display: none; 
+    }
+
+    /* Stack the footer earlier so columns don't squish */
+    footer {
+        padding: 3rem 1rem;
+    }
+    
+    /* Adjust header spacing */
+    header {
+        margin: 1rem;
+        justify-content: space-between;
+    }
+}
+
+/* --- Mobile (768px and below) --- */
+/* We increase this from 375px to 768px to catch all phones */
+@media screen and (max-width: 768px) {
+    
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 1rem;
+    }
+
+    /* Hide Navigation & Desktop Buttons */
+    .nav-menu, .right {
+        display: none;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    /* Stack Sections */
+    section {
+        flex-direction: column;
+        text-align: center;
+        padding: 3rem 1.5rem;
+    }
+
+    /* Typography Scaling */
+    .content h1 {
+        font-size: 2rem; /* Smaller heading for readability */
+    }
+
+    /* Stack Form */
+    .input-container {
+        flex-direction: column;
+        width: 100%;
+        height: auto; /* Allow height to grow */
+        padding: 1.5rem;
+    }
+
+    input, .input-btn {
+        width: 100%; /* Full width touch targets */
+        height: 3rem; /* Min height 44px for WCAG touch target */
+    }
+
+    /* Cards Vertical Stack */
+    .cards-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 5rem;
+    }
+
+    /* Vertical Connecting Line for Mobile */
+    .cards-container::before {
+        display: block; /* Bring it back for vertical stack */
+        width: 8px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+    }
+
+    /* Footer Adjustments */
+    footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .footer-mid {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+}
+
+/* --- Very Small Screens (320px) --- */
+@media screen and (max-width: 350px) {
+    .content h1 {
+        font-size: 1.7rem; /* Even smaller text so it doesn't overflow */
+    }
+    
+    .card {
+        padding: 0 1rem 2rem 1rem; /* Reduce padding to fit narrow screen */
+    }
 }
