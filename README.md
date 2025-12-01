@@ -31,13 +31,6 @@ Generate shorter links that can be copied
 ## <a name="design"></a>Design
 * Design elements implemented using HTML5 and CSS3. 
 
-## <a name="nextsteps"></a>Project Next Steps
-* Allow the user to chose player one or player two.
-* Allow users to play against computer.
-* Add a timer
-* Add a scoreboard. 
-* Users can change the theme.
-
 ## <a name="deployment"></a>Deployed Link
 [GitHubPages] (https://juansalda91.github.io/URL-shortening-API-landing-page/)
 
