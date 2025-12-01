@@ -29,12 +29,11 @@ Generate shorter links that can be copied
 * https://www.notion.so/2b7b0c22cd7780a08b84cc58d34ae213?v=2b7b0c22cd7780c09459000cc1b940f8&source=copy_link
 
 ## <a name="design"></a>Design
-* Design elements implemented using HTML5 and CSS3. 
+* Design elements implemented using HTML5, CSS3 and Figma for the Wireframe. 
 
 ## <a name="deployment"></a>Deployed Link
 [GitHubPages] (https://juansalda91.github.io/URL-shortening-API-landing-page/)
 
-* You can view the repository:
 [Github.com] (https://github.com/JuanSalda91/URL-shortening-API-landing-page)
 
 ## Reflection
