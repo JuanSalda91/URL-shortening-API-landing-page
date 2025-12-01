@@ -48,7 +48,7 @@ async function shortenUrl(longUrl) {
         return data.link; // -- shortened URL -- //
     } catch (error) {
         console.error('ERROR:', error);
-        alert('Something went worng! PLease check the URL or your connection.')
+        alert('Something went worng! Please check the URL or your connection.')
         return null;
     }
 }
