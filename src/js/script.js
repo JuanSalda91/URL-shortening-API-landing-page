@@ -35,7 +35,7 @@ async function shortenUrl(longUrl) {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                long_Url: longUrl,
+                long_url: longUrl,
                 domain: "bit.ly"
             })
         });
@@ -58,12 +58,12 @@ async function shortenUrl(longUrl) {
 shortenBtn.addEventListener ('click', async (e) => {
     e.preventDefault();
 
-    const urlToShorten = inputField.ariaValueMin.trim();
+    const urlToShorten = inputField.value.trim();
 
     // -- adding validation -- //
     if (!urlToShorten) {
         inputField.style.border = "2px solid red";
-        inputField.palceholder = "Please add a link";
+        inputField.placeholder = "Please add a link";
         return;
     } else {
         inputField.style.border = "none";
@@ -87,3 +87,31 @@ shortenBtn.addEventListener ('click', async (e) => {
     shortenBtn.disabled = false;
 });
 
+// ----- function to generate links ----- //
+function addResultCard(originalUrl, shortUrl) {
+    const card = document.createElement('div');
+    card.classList.add('result-card');
+
+    // -- adding styling -- //
+    card.innerHTML = `
+    <p class="original-link">${originalUrl}</p>
+    <div class="short-link-box">
+        <a href="${shortUrl}" target="_blank" class="short-link">${shortUrl} </a>
+        <button class="copy-btn">Copy</button>
+    </div>
+    `;
+
+    // -- Copy function -- //
+    const copyBtn = card.querySelector('.copy-btn');
+    copyBtn.addEventListener('click', () => {
+        navigator.clipboard.writeText(shortUrl);
+        copyBtn.innerText = 'Copied!';
+        copyBtn.style.backgroundColor = 'var(--Purple950)';
+
+        setTimeout(() => {
+            copyBtn.innerText = 'Copy';
+            copyBtn.style.backgroundColor = 'var(--Blue400)';
+        }, 2000);
+    });
+    resultsContainer.prepend(card); // -- to add a new link to the top -- //
+}
