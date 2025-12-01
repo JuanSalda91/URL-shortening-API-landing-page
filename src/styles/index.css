@@ -184,6 +184,17 @@ input {
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
+.link-input {
+    height: auto;
+    background: linear-gradient(to bottom, white 50%, #eff1f7 50%);
+    
+    /* Add these lines: */
+    display: flex;
+    flex-direction: column; /* Forces children (Form and Results) to stack vertically */
+    align-items: center;    /* Centers them horizontally */
+    padding-bottom: 2rem;   /* Adds some space at the bottom */
+}
+
 .original-link {
     color: var(--Gray950);
     font-weight: 500;
