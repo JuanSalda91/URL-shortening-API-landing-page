@@ -11,9 +11,9 @@ const resultsContainer = document.createElement('div');
 resultsContainer.id = 'result-area';
 resultsContainer.style.marginTop = '2rem';
 resultsContainer.style.width = '100%';
-resultsContainer.style.maxWidth = '100px';
+resultsContainer.style.maxWidth = '1100px';
 resultsContainer.style.display = 'flex';
-resultsContainer.style.dlexDirection = 'column';
+resultsContainer.style.flexDirection = 'column';
 resultsContainer.style.gap = '1rem'
 resultsContainer.style.alignItems = 'center';
 
