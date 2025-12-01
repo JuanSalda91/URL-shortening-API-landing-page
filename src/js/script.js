@@ -40,7 +40,7 @@ async function shortenUrl(longUrl) {
             })
         });
         
-        if(!noresponde.ok) {
+        if(!response.ok) {
             throw new Error('Failed to shorten URL');
         }
 
@@ -61,7 +61,6 @@ shortenBtn.addEventListener ('click', async (e) => {
     const urlToShorten = inputField.ariaValueMin.trim();
 
     // -- adding validation -- //
-
     if (!urlToShorten) {
         inputField.style.border = "2px solid red";
         inputField.palceholder = "Please add a link";
@@ -70,5 +69,21 @@ shortenBtn.addEventListener ('click', async (e) => {
         inputField.style.border = "none";
     }
 
-    
-})
+    // -- adding loading animation -- //
+    const originalText = shortenBtn.innerText;
+    shortenBtn.innerText = 'Shortening...';
+    shortenBtn.disabled = true;
+
+    // -- API call -- //
+    const shortUrl = await shortenUrl(urlToShorten);
+
+    if (shortUrl) {
+        addResultCard(urlToShorten, shortUrl);
+        inputField.value = ''; // - input clear - //
+    }
+
+    // - adding a reset button - //
+    shortenBtn.innerText = originalText;
+    shortenBtn.disabled = false;
+});
+
